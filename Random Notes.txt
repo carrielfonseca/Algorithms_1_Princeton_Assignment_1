@@ -1,0 +1,121 @@
+General: Piping values with echo, text file inputs etc (see text book, 4th edition)
+
+
+Class 1: Percolation Assignment and Quick Unions
+
+To tell if two elements belong to the same component, you do not need to know the path. 
+However, notice that the algorithms implemented depend on you starting the union process.
+If you ever lose the information on how these components are distributed, the algorithm cannot be applied
+
+
+Learned in the first assignment: how to put a library (algs4)
+Also learned: important to put things the classes in the default package. Otherwise, the automated grades will fail
+              if you have trouble in doing that, eliminate the package statement in the beginning of the code:
+              "package javaapplication21"
+
+Learned how to compile and run a code class in the command prompt (check book too). Also, learned how to run that with a text input (see checklist page for the PercolationVisalizer)
+In the specification, it is stated: Be sure that your code conforms to the prescribed APIs, including being in the "default" 
+Learned what an API is: needs to have the exact public methods. There is no problem in adding private methods though
+The checklist of the assignment reads:
+"Can I add (or remove) methods to (or from) Percolation? No. You must implement the Percolation API exactly as specified, with the identical 
+set of public methods and signatures or your assignment will not be graded. However, you are encouraged to add private methods that 
+enhance the readability, maintainability, and modularity of your program."
+
+Missing: in the first assignment, I could not solve the issue of back wash (would like to address this at some point)
+
+Learned: how to throw an exception (see checklist of the first assignment)
+
+The percolation problem makes use of a very ingenious stratagem of getting 2 virtual points outside of the grid
+
+The lottery of the points in the grid is fairly straightforward: just choose a point and, if it has been opened, do another lottery
+
+The representation of the connected components is still an integer
+
+Class 2:
+
+No commandline do Windows:
+
+The Node inside the node
+
+Q: Why implementing the RandomizedQueue as resize Array?
+A: Randomized Queue needs to have constant amortized time for non-iterator operations. 
+This means that dequeuing would need to be constant most of the times. 
+Since we need to choose an element at random, getting this element in a linkedlist would not be constant, 
+but rather linear, hence doing it with a resize array.
+
+Q: Why implementing the Deque as a LinkedList?
+A: In the specification, it reads "Your deque implementation must support each deque operation in constant worst-case time"
+If we were to add an element in a resize array, the worst case would not be constant
+
+echo A B C D E F G H I | java-algs4 Subset 3
+ou
+java-algs4 Subset 3
+A BC D E F G H I  ctrl + z
+
+True implementation of Linked Lists in Java! It has a recursive component to it.
+Reviewed: the Generics Implementation. Advantage of getting the error at compile time instead of running time.
+Learned: how to do a casting using arrays (and there is an unavoidable warning message when doing this)
+
+What Loitering is
+
+What an amortized time is: MOST of the time it is like that
+How to efficently remove an element with an array implementation when the element removed is picked at random 
+How to get a random sample with no replacement: see Subset.java and RandomizedQueue.java: Shuffle method in the library
+The iterable class, the iterator class
+
+
+
+
+Class 3 - Sorts
+
+Merge and quick sort
+Mergesort needs an extra array to work, while quicksort does not (in place algorithm)
+Professor mentions the assert statement in the code (for debugging). 
+
+Learned: class iterable, 
+
+Learned: Comparator interface to be able to sort the array in a different criterion (different than comparable)
+Learned: Double.NEGATIVE_INFINITY. Take note that, when we sort the array by slope, it is important the NEGATIVE_INFINITY, since it guarantees
+it wont be neighbor in the array pointsOrganizedBySlope of any other point
+
+
+
+Class 4 - Priority Queues
+
+Learned: how to do a binary heap AND how to use it for a heapsort (unfortunately not so used)
+
+In my assignment, I used the implementation of the priority Queue with the comparator. 
+It it possible not using it? Just the comparable maybe?
+
+
+
+Class 5 - Trees
+
+Binary trees depend on how on the order it is being inserted
+To make it balanced, you can use either a 2-3d tree or a black red tree
+Learned: How to do an in-order and pre-order operation recursevely in the assignment
+Learned: use the scanner to read a file in NearestNeighborVisualizer.java
+
+The assignment was to create our own tree
+
+
+
+
+
+Class 6 - Hash Tables
+
+Q: When is it better to use Hash Tables than Balanced Trees?
+A: When you don't need order operations and when you don't need guaranteed performance (consequences of poor performance are not dire)
+
+Q: What is the performance of HashTables?
+A: For search and delete, it is constant time
+
+Q: What are the 2 main implementations for HashTables?
+A: Separate Chaining and Linear Probing
+
+Found out an interesting aspect: absolute value does not work for -2^31 (see videos)
+
+
+
+
+
